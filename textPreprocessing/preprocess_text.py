@@ -21,5 +21,4 @@ def preprocess_text(text: str) -> str:
 
     words = preprocessed_text.split(' ')
 
-    # TODO: закончить утилиту
     return ' '.join([preprocess_word(word) for word in words])
