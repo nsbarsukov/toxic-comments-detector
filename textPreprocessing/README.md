@@ -1,5 +1,6 @@
 # Russian text preprocessing
 В данном директории собран весь код, относящий к предварительной предобработке русскоязычного текста.
+Посмотреть принцип работы всех утилит можно в файле [sandbox.ipynb](./sandbox.ipynb).
 
 ## Lemmatization
 Для лемматизации русских слов есть два основных инструмента: [**Pymorphy2**](https://github.com/kmike/pymorphy2) и [**MyStem**](https://yandex.ru/dev/mystem/).
