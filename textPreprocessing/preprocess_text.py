@@ -1,4 +1,4 @@
-from . import lemmatize_word, remove_numbers, remove_extra_space
+from text_utils import lemmatize_word, remove_numbers, remove_extra_space
 
 
 def preprocess_text(text: str) -> str:
