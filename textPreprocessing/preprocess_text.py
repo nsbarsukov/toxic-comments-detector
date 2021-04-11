@@ -1,4 +1,4 @@
-from text_utils import lemmatize_word, remove_numbers
+from text_utils import lemmatize_word, remove_numbers, remove_extra_space
 
 
 def preprocess_text(text: str) -> str:
@@ -7,8 +7,14 @@ def preprocess_text(text: str) -> str:
 
     * Каждое слово в этом предложение приводится к начальной форме
     * Убираются цифры
+    * Убирает излишние пробелы (два и более пробела подряд)
     """
-    preprocessed_text = remove_numbers(text)
+    def preprocess_whole_sentence(sentence):
+        new_sentence = remove_numbers(sentence)
+
+        return remove_extra_space(new_sentence)
+
+    preprocessed_text = preprocess_whole_sentence(text)
 
     def preprocess_word(word: str) -> str:
         return lemmatize_word(word)
