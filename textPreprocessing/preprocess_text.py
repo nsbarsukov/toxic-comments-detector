@@ -5,15 +5,18 @@ def preprocess_text(text: str) -> str:
     """
     Принимает на вход текст/предложение (слова разделенные пробелом). Отдает обработанный вариант этого же текста.
 
-    * Каждое слово в этом предложение приводится к начальной форме
-    * Убираются цифры
+    * Приведение всего к нижнему регистру
+    * Убирает цифры
     * Убирает излишние пробелы (два и более пробела подряд)
+    * Убирает пунктуацию
+    * Каждое слово в этом предложение приводится к начальной форме (лемматизация)
     """
     def preprocess_whole_sentence(sentence):
-        new_sentence = remove_numbers(sentence)
-        new_sentence = remove_punctuation(new_sentence)
+        corrected_sentence = sentence.lower()
+        corrected_sentence = remove_numbers(corrected_sentence)
+        corrected_sentence = remove_punctuation(corrected_sentence)
 
-        return remove_extra_space(new_sentence)
+        return remove_extra_space(corrected_sentence)
 
     preprocessed_text = preprocess_whole_sentence(text)
 
