@@ -13,10 +13,8 @@ from textPreprocessing import preprocess_text
 
 preprocess_text('Дети бежали скорее со ШКОЛЫ в 6 вечера.')
 ```
-Output:
-```python
-'ребёнок бежать скорее с школа в вечер'
-```
+> ребёнок бежать скорее с школа в вечер
+
 <br>
 <br>
 
