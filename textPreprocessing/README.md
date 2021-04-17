@@ -32,15 +32,13 @@ from text_utils import lemmatize_word
 words = ['бежала', 'пятого', 'любимая', 'дети']
 
 for not_initial_form_word in words:
-    print(not_initial_form_word, '===> ', lemmatize_word(not_initial_form_word))
+    print(not_initial_form_word, '===>', lemmatize_word(not_initial_form_word))
 ```
-Output:
-```python
-'бежала ===>  бежать'
-'пятого ===>  пятый'
-'любимая ===>  любимый'
-'дети ===>  ребёнок'
-```
+> бежала ===> бежать <br>
+> пятого ===> пятый <br>
+> любимая ===> любимый <br>
+> дети ===> ребёнок <br>
+
 ---
 ### remove_punctuation
 ```python
@@ -48,10 +46,8 @@ from text_utils import remove_punctuation
 
 remove_punctuation('string.!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ With. Punctuation?')
 ```
-Output:
-```python
-'string With Punctuation'
-```
+> string With Punctuation
+
 ---
 ### remove_numbers
 ```python
@@ -59,10 +55,8 @@ from text_utils import remove_numbers
 
 remove_numbers('Дети бежали скорее со школы в 6 вечера')
 ```
-Output:
-```python
-'Дети бежали скорее со школы в  вечера'
-```
+> Дети бежали скорее со школы в  вечера
+
 ---
 ### remove_extra_space
 ```python
@@ -70,10 +64,8 @@ from text_utils import remove_extra_space
 
 remove_extra_space('Тут  сейчас 2 места с лишними              пробелами')
 ```
-Output:
-```python
-'Тут сейчас 2 места с лишними пробелами'
-```
+> Тут сейчас 2 места с лишними пробелами
+
 <br>
 <br>
 
