@@ -1,5 +1,6 @@
-from .text_utils import lemmatize_word, remove_numbers, remove_extra_whitespace_characters, remove_punctuation
+from .text_utils import lemmatize_word, remove_numbers, remove_redundant_whitespace_chars, remove_punctuation
 
+SPACE = ' '
 
 def preprocess_text(text: str) -> str:
     """
@@ -16,7 +17,7 @@ def preprocess_text(text: str) -> str:
         corrected_sentence = remove_numbers(corrected_sentence)
         corrected_sentence = remove_punctuation(text=corrected_sentence, replace_by_string=SPACE)
 
-        return remove_extra_whitespace_characters(corrected_sentence)
+        return remove_redundant_whitespace_chars(corrected_sentence)
 
     preprocessed_text = preprocess_whole_sentence(text)
 

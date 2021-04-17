@@ -1,4 +1,4 @@
 from .lemmatize import lemmatize_word
 from .remove_numbers import remove_numbers
-from .remove_extra_whitespace_characters import remove_extra_whitespace_characters
+from .remove_redundant_whitespace_chars import remove_redundant_whitespace_chars
 from .remove_punctuation import remove_punctuation
