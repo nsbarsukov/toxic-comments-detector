@@ -1,0 +1,1 @@
+from .wiki_ml_model import wiki40_russian_embedding_layer
