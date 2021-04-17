@@ -58,11 +58,11 @@ remove_numbers('Дети бежали скорее со школы в 6 вече
 > Дети бежали скорее со школы в  вечера
 
 ---
-### remove_extra_space
+### remove_extra_whitespace_characters
 ```python
 from text_utils import remove_extra_space
 
-remove_extra_space('Тут  сейчас 2 места с лишними              пробелами')
+remove_extra_whitespace_characters('Тут  сейчас 2 места с лишними       \n       пробелами\n')
 ```
 > Тут сейчас 2 места с лишними пробелами
 
