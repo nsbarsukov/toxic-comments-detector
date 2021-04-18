@@ -27,7 +27,7 @@ def evaluate_model(y_true, y_pred, tf_history_learning=None):
         plt.figure(figsize=(20, 10), tight_layout={'h_pad': 5})
 
         plt.subplot(2, 2, 1)
-        plot_history_metric_graph(tf_history_learning, 'accuracy')
+        plot_history_metric_graph(tf_history_learning, 'binary_accuracy')
         plt.subplot(2, 2, 2)
         plot_history_metric_graph(tf_history_learning, 'loss')
         plt.subplot(2, 2, 3)
