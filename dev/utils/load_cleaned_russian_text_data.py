@@ -10,6 +10,7 @@ def load_cleaned_russian_text_data():
 
     df = cleaned_toxic_comments_df.copy()
     df = df.drop(columns=['comment'])
+    df = df.astype({'toxic': 'int64'})
 
     y = df.pop('toxic')
     X = np.array(df)
