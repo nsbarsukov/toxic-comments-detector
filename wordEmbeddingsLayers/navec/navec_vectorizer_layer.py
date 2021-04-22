@@ -11,8 +11,15 @@ class NavecVectorizerLayer(layers.Layer):
     def __init__(self, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
         super(NavecVectorizerLayer, self).__init__()
         self.navec_embeddings = Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
+
+        def vectorizer(word):
+            try:
+                return self.navec_embeddings[word]
+            except:
+                return self.navec_embeddings['<unk>']
+
         self.vectorizer = CustomVectorizerLayer(
-            vectorizer=lambda word: self.navec_embeddings[word],
+            vectorizer=vectorizer,
             pad_sentence_to_n_words=pad_sentence_to_n_words,
             pad_word=pad_word
         )
