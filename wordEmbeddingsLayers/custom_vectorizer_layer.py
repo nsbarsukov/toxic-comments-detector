@@ -15,6 +15,7 @@ def decode_byte_string_to_russian_text(string_tensor):
 #         result = tf.map_fn(fn=lambda x: preprocess_text(decode_byte_string_to_russian_text(x)), elems=texts_tensor)
 #         return result
 
+# TODO не работает
 class CustomVectorizerLayer(layers.Layer):
     def __init__(self, vectorizer, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
         super(CustomVectorizerLayer, self).__init__()
