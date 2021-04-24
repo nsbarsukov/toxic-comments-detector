@@ -10,5 +10,5 @@ def vectorize_sentence(sentence: str, vectorizer, pad_word=PAD_WORD, pad_sentenc
     return np.array(list(map(vectorizer, padded_word_arr)))
 
 
-def make_vectorizer(vectorizer, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
+def make_sentence_vectorizer(vectorizer, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
     return lambda sentence: vectorize_sentence(sentence, vectorizer, pad_word, pad_sentence_to_n_words)
