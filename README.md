@@ -28,6 +28,6 @@
 ## TODO
 - [X] Добавить weights (токсичных комментов меньше)
 - [X] Сделать единую утилиту evaluate_model для всех блокнотов с моделями (добавить туда графиков, использующих history)
-- [ ] Попробовать [navec](https://github.com/natasha/navec)
+- [X] Попробовать [navec](https://github.com/natasha/navec)
 - [ ] Попробовать BERT
 - [ ] Подумать про FastText
