@@ -1,3 +1,6 @@
 .idea
 .ipynb_checkpoints
 __pycache__
+
+wordEmbeddingsLayers/fastText/*.bin
+wordEmbeddingsLayers/fastText/*.bin.*
