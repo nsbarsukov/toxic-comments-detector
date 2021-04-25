@@ -30,5 +30,6 @@
 - [X] Сделать единую утилиту evaluate_model для всех блокнотов с моделями (добавить туда графиков, использующих history)
 - [X] Попробовать [navec](https://github.com/natasha/navec)
 - [X] Попробовать ConvNet
+- [X] Попробовать pretrained FastText
+- [ ] Попробовать натренировать свой FastText через gensim
 - [ ] Попробовать BERT
-- [ ] Подумать про FastText
