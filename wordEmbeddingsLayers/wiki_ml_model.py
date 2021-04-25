@@ -10,5 +10,5 @@ wiki40_russian_embedding_layer = hub.KerasLayer(
     signature='word_embeddings', # модель умеет многое, но нас интересует только векторизация слов
     output_key='word_embeddings',
     dtype=tf.string,
-    trainable=False,
+    trainable=False, # Denotes whether we want to finetune model or not. We set it to True, the embeddings present in model are finetuned based on our downstream task
 )
