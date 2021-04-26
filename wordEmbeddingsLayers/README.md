@@ -19,3 +19,9 @@ It shows competitive or better results than RusVectores, loads ~10 times faster 
 Модель внедряется через библиотеку [navec](https://github.com/natasha/navec#installation) с подгрузкой [весов](https://github.com/natasha/navec#downloads).
 
 Описана в [статье](https://natasha.github.io/navec/).
+
+## Universal Sentence Encoder (multilingual)
+16 languages (Arabic, Chinese-simplified, Chinese-traditional, English, French, German, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Spanish, Thai, Turkish, **Russian**) text encoder.
+
+Модель берется с [tensorflow hub](https://tfhub.dev/google/universal-sentence-encoder-multilingual/3).
+> Yinfei Yang, Daniel Cer, Amin Ahmad, Mandy Guo, Jax Law, Noah Constant, Gustavo Hernandez Abrego , Steve Yuan, Chris Tar, Yun-hsuan Sung, Ray Kurzweil. Multilingual Universal Sentence Encoder for Semantic Retrieval. July 2019
