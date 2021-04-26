@@ -6,9 +6,11 @@ import tensorflow_hub as hub
 USE_HUB_MODEL = 'https://tfhub.dev/google/universal-sentence-encoder-multilingual/3'
 USE_SENTENCE_EMBEDDING_DIMENSION = 512
 
-universal_sentence_encoder_layer = hub.KerasLayer(
-    handle=USE_HUB_MODEL,
-    input_shape=[],
-    dtype=tf.string,
-    trainable=True,
-)
+
+def create_universal_sentence_encoder_layer():
+    return hub.KerasLayer(
+        handle=USE_HUB_MODEL,
+        input_shape=[],
+        dtype=tf.string,
+        trainable=True,
+    )
