@@ -31,5 +31,4 @@
 - [X] Попробовать [navec](https://github.com/natasha/navec)
 - [X] Попробовать ConvNet
 - [X] Попробовать pretrained FastText
-- [ ] Попробовать натренировать свой FastText через gensim
 - [ ] Попробовать BERT
