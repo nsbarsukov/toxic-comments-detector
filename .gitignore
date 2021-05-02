@@ -2,5 +2,6 @@
 .ipynb_checkpoints
 __pycache__
 
-wordEmbeddingsLayers/fastText/*.bin
-wordEmbeddingsLayers/fastText/*.bin.*
+wordEmbeddingsLayers/*/*.bin
+wordEmbeddingsLayers/*/*.bin.*
+wordEmbeddingsLayers/*/*.tar.gz
