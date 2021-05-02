@@ -7,17 +7,24 @@ from dev import PAD_WORD
 from wordEmbeddingsLayers import CustomVectorizerLayer
 
 
-navec_embeddings = Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
-
 NAVEC_UNKNOWN_TOKEN = '<unk>'
-NAVEC_EMBEDDING_DIMENSION = navec_embeddings.get(NAVEC_UNKNOWN_TOKEN).shape[0]
 
 
-def navec_word_vectorizer(word):
-    try:
-        return navec_embeddings[word]
-    except:
-        return navec_embeddings[NAVEC_UNKNOWN_TOKEN]
+def load_navec_embeddings():
+    return Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
+
+
+def get_navec_word_vectorizer():
+    navec_embeddings = load_navec_embeddings()
+    NAVEC_EMBEDDING_DIMENSION = navec_embeddings.get(NAVEC_UNKNOWN_TOKEN).shape[0]
+
+    def navec_word_vectorizer(word):
+        try:
+            return navec_embeddings[word]
+        except:
+            return navec_embeddings[NAVEC_UNKNOWN_TOKEN]
+
+    return navec_word_vectorizer, NAVEC_EMBEDDING_DIMENSION
 
 
 class NavecVectorizerLayer(layers.Layer):
@@ -25,7 +32,7 @@ class NavecVectorizerLayer(layers.Layer):
         super(NavecVectorizerLayer, self).__init__()
 
         self.vectorizer = CustomVectorizerLayer(
-            vectorizer=navec_word_vectorizer,
+            vectorizer=get_navec_word_vectorizer(),
             pad_sentence_to_n_words=pad_sentence_to_n_words,
             pad_word=pad_word
         )
