@@ -4,4 +4,5 @@ __pycache__
 
 wordEmbeddingsLayers/*/*.bin
 wordEmbeddingsLayers/*/*.bin.*
+wordEmbeddingsLayers/*/*.tar
 wordEmbeddingsLayers/*/*.tar.gz
