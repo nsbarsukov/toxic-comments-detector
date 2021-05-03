@@ -1,10 +1,11 @@
 import numpy as np
-import fasttext.util
 
 PATH_TO_FASTTEXT_WEIGHTS = 'wordEmbeddingsLayers/fastText/cc.ru.300.bin'
 
 
 def load_russian_fasttext_model():
+    import fasttext.util
+
     try:
         ft = fasttext.load_model(PATH_TO_FASTTEXT_WEIGHTS)
     except:

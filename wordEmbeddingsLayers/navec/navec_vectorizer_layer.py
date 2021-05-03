@@ -1,6 +1,5 @@
 import tensorflow as tf
 from tensorflow.keras import layers
-from navec import Navec
 from typing import List
 
 from dev import PAD_WORD
@@ -11,6 +10,8 @@ NAVEC_UNKNOWN_TOKEN = '<unk>'
 
 
 def load_navec_embeddings():
+    from navec import Navec
+
     return Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
 
 
