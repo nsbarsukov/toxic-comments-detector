@@ -11,9 +11,9 @@ def get_3d_quartile_words_count(sentences_array):
     def count_words(sentence):
         return len(sentence.split(' '))
 
-    return round(
+    return int(round(
         np.percentile(
             list(map(count_words, sentences_array)),
             75
         )
-    )
+    ))
