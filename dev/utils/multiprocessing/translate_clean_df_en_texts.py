@@ -18,10 +18,10 @@ if __name__ == "__main__":
     а также применяет к каждой комментарию функцию from textPreprocessing import preprocess_text
     (чистка и нормализация русского текста)
     """
-    STREAMS_COUNT = multiprocessing.cpu_count()
+    STREAMS_COUNT = min(multiprocessing.cpu_count(), 5)
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
 
-    orig_en_toxic_comments_df = pd.read_csv(f"../../../{DIRECTORY_WITH_DATA}/{ORIGINAL_ENGLISH_DF_NAME}").loc[:5000, :]
+    orig_en_toxic_comments_df = pd.read_csv(f"../../../{DIRECTORY_WITH_DATA}/{ORIGINAL_ENGLISH_DF_NAME}").loc[:100, :]
 
     pool = multiprocessing.Pool(STREAMS_COUNT)
 
