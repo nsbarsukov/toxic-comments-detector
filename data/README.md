@@ -7,4 +7,14 @@
 ## toxicRUCommentsCleanedDF.csv
 Это датасет c Kaggle
 [«Russian Language Toxic Comments»](https://www.kaggle.com/blackmoon/russian-language-toxic-comments),
-к которому применены NLP-техники по очистке текста (смотри файл [clean_df_ru_texts.py](/dev/utils/clean_df_ru_texts.py)).
+к которому применены NLP-техники по очистке текста (смотри файл [clean_df_ru_texts.py](/dev/utils/multiprocessing/clean_df_ru_texts.py)).
+
+## toxicENcommentsOriginalDF.csv
+Это англоязычный датасет с Kaggle [Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge).
+
+## toxicRUCommentsTranslatedCleanedDF.csv
+Это англоязычный датасет с Kaggle [Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge),
+над текстами которого сделали машинный перевод на русский язык с помощью библиотеки [argostranslate](https://github.com/argosopentech/argos-translate)
+(версия модели была взята [English => Russian](https://www.argosopentech.com/argospm/index/)),
+а после над переведенным вариантом текстов сделали чистку и нормализацию слов.
+Весь описанный алгоритм представлен в файле [translate_clean_df_en_texts.py](dev/utils/multiprocessing/translate_clean_df_en_texts.py).
