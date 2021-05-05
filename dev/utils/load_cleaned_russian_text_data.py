@@ -21,7 +21,7 @@ def load_cleaned_russian_text_data():
 def load_translated_from_english_cleaned_russian_text_data():
     translated_cleaned_toxic_comments_df = pd.read_csv(f"{DIRECTORY_WITH_DATA}/{TRANSLATED_CLEANED_ENGLISH_DF_NAME}")
 
-    df = translated_cleaned_toxic_comments_df.copy()
+    df = translated_cleaned_toxic_comments_df.copy().dropna()
     df = df.astype({'is_toxic': 'int64'})
 
     y = df.pop('is_toxic')

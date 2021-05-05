@@ -7,14 +7,7 @@ def find_in_array(array, cb):
 
 
 def make_en_rus_translator():
-    from argostranslate import package, translate
-    # package.install_from_path('dev/utils/en_rus.argosmodel')
-    installed_languages = translate.get_installed_languages()
+    from textblob import TextBlob
 
-    russian = find_in_array(installed_languages, lambda lang: str(lang) == 'Russian')
-    english = find_in_array(installed_languages, lambda lang: str(lang) == 'English')
-
-    translation_en_rus = english.get_translation(russian)
-
-    return lambda text: translation_en_rus.translate(text)
+    return lambda text: str(TextBlob(text).translate(from_lang='en', to='ru'))
 
