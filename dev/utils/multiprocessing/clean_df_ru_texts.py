@@ -13,7 +13,7 @@ if __name__ == "__main__":
     STREAMS_COUNT = multiprocessing.cpu_count()
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
 
-    orig_toxic_comments_df = pd.read_csv(f"../../{DIRECTORY_WITH_DATA}/{ORIGINAL_RUSSIAN_DF_NAME}")
+    orig_toxic_comments_df = pd.read_csv(f"../../../{DIRECTORY_WITH_DATA}/{ORIGINAL_RUSSIAN_DF_NAME}")
 
     pool = multiprocessing.Pool(STREAMS_COUNT)
 
