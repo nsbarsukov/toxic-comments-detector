@@ -34,7 +34,10 @@ if __name__ == "__main__":
     orig_en_toxic_comments_df = orig_en_toxic_comments_df.drop(columns=TOXIC_CATEGORY_COLUMNS)
 
     # slice certain category
-    # orig_en_toxic_comments_df = orig_en_toxic_comments_df[orig_en_toxic_comments_df[ENGLISH_TEXTS_TOXIC_LABEL_COLUMN] == 1]
+    orig_en_toxic_comments_df = orig_en_toxic_comments_df[
+        orig_en_toxic_comments_df[ENGLISH_TEXTS_TOXIC_LABEL_COLUMN] == 1
+    ].reset_index(drop=True)
+    orig_en_toxic_comments_df = orig_en_toxic_comments_df.loc[:5, :]
 
     STREAMS_COUNT = min(multiprocessing.cpu_count(), 5)
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
@@ -47,7 +50,10 @@ if __name__ == "__main__":
 
     orig_en_toxic_comments_df = orig_en_toxic_comments_df.drop(columns=[ORIGINAL_ENGLISH_TEXTS_COLUMN])
 
-    orig_en_toxic_comments_df.to_csv(f"../../../{DIRECTORY_WITH_DATA}/{TRANSLATED_CLEANED_ENGLISH_DF_NAME}", index=False)
+    orig_en_toxic_comments_df.to_csv(
+        f"../../../{DIRECTORY_WITH_DATA}/toxic_{TRANSLATED_CLEANED_ENGLISH_DF_NAME}",
+        index=False
+    )
 
     pool.close()
     pool.join()
