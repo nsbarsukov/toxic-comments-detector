@@ -28,6 +28,7 @@ def load_translated_from_english_cleaned_russian_text_data():
     translated_cleaned_toxic_comments_df = pd.read_csv(f"{DIRECTORY_WITH_DATA}/{TRANSLATED_CLEANED_ENGLISH_DF_NAME}")
 
     df = translated_cleaned_toxic_comments_df.copy().dropna()
+    df = df.drop(columns=['id'])
     df = df.astype({ENGLISH_TEXTS_TOXIC_LABEL_COLUMN: 'int64'})
 
     y = df.pop(ENGLISH_TEXTS_TOXIC_LABEL_COLUMN)
