@@ -42,7 +42,7 @@ if __name__ == "__main__":
     non_toxic_comments_df = slice_certain_label_df_part(orig_en_toxic_comments_df, 0)
     sliced_df = pd.concat([toxic_comments_df, non_toxic_comments_df]).sample(frac=1)
 
-    STREAMS_COUNT = min(multiprocessing.cpu_count(), 5)
+    STREAMS_COUNT = multiprocessing.cpu_count() - 1
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
     pool = multiprocessing.Pool(STREAMS_COUNT)
 
