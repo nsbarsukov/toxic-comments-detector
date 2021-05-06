@@ -34,24 +34,27 @@ if __name__ == "__main__":
     orig_en_toxic_comments_df = orig_en_toxic_comments_df.drop(columns=TOXIC_CATEGORY_COLUMNS)
 
     # slice certain category
-    orig_en_toxic_comments_df = orig_en_toxic_comments_df[
-        orig_en_toxic_comments_df[ENGLISH_TEXTS_TOXIC_LABEL_COLUMN] == 1
-    ].reset_index(drop=True)
-    orig_en_toxic_comments_df = orig_en_toxic_comments_df.loc[:5000, :]
+    def slice_certain_label_df_part(origin_df, label):
+        filtered_by_label_df = origin_df[origin_df[ENGLISH_TEXTS_TOXIC_LABEL_COLUMN] == label].reset_index(drop=True)
+        return filtered_by_label_df.loc[1:5000, :]
+
+    toxic_comments_df = slice_certain_label_df_part(orig_en_toxic_comments_df, 1)
+    non_toxic_comments_df = slice_certain_label_df_part(orig_en_toxic_comments_df, 0)
+    sliced_df = pd.concat([toxic_comments_df, non_toxic_comments_df]).sample(frac=1)
 
     STREAMS_COUNT = min(multiprocessing.cpu_count(), 5)
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
     pool = multiprocessing.Pool(STREAMS_COUNT)
 
-    orig_en_toxic_comments_df[TRANSLATED_CLEANED_TEXTS_COLUMN] = tqdm(
-        pool.imap(translate_clean, orig_en_toxic_comments_df[ORIGINAL_ENGLISH_TEXTS_COLUMN]),
-        total=len(orig_en_toxic_comments_df)
+    sliced_df[TRANSLATED_CLEANED_TEXTS_COLUMN] = tqdm(
+        pool.imap(translate_clean, sliced_df[ORIGINAL_ENGLISH_TEXTS_COLUMN]),
+        total=len(sliced_df)
     )
 
-    orig_en_toxic_comments_df = orig_en_toxic_comments_df.drop(columns=[ORIGINAL_ENGLISH_TEXTS_COLUMN])
+    sliced_df = sliced_df.drop(columns=[ORIGINAL_ENGLISH_TEXTS_COLUMN])
 
-    orig_en_toxic_comments_df.to_csv(
-        f"../../../{DIRECTORY_WITH_DATA}/toxic_{TRANSLATED_CLEANED_ENGLISH_DF_NAME}",
+    sliced_df.to_csv(
+        f"../../../{DIRECTORY_WITH_DATA}/{TRANSLATED_CLEANED_ENGLISH_DF_NAME}",
         index=False
     )
 
