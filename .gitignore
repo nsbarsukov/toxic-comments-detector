@@ -7,4 +7,4 @@ wordEmbeddingsLayers/*/*.bin.*
 wordEmbeddingsLayers/*/*.tar
 wordEmbeddingsLayers/*/*.tar.gz
 
-*/*/*.argosmodel
+*argosmodel*

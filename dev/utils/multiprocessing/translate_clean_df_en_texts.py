@@ -37,7 +37,7 @@ if __name__ == "__main__":
     orig_en_toxic_comments_df = orig_en_toxic_comments_df[
         orig_en_toxic_comments_df[ENGLISH_TEXTS_TOXIC_LABEL_COLUMN] == 1
     ].reset_index(drop=True)
-    orig_en_toxic_comments_df = orig_en_toxic_comments_df.loc[:5, :]
+    orig_en_toxic_comments_df = orig_en_toxic_comments_df.loc[:5000, :]
 
     STREAMS_COUNT = min(multiprocessing.cpu_count(), 5)
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
