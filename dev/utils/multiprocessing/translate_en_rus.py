@@ -9,5 +9,5 @@ def translate_en_rus(text):
     try:
         return translate(text)
     except:
-        time.sleep(randint(0, 5))
+        time.sleep(randint(5, 30))
         return translate_en_rus(text)
