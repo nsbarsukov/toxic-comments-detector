@@ -1,1 +1,5 @@
 PAD_WORD = '<pad>'
+
+ORIGINAL_ENGLISH_TEXTS_COLUMN = 'comment_text'
+TRANSLATED_CLEANED_TEXTS_COLUMN = 'translated_cleaned_comment'
+ENGLISH_TEXTS_TOXIC_LABEL_COLUMN = 'is_toxic'
