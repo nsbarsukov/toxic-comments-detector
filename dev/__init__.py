@@ -11,3 +11,4 @@ from .utils.get_3d_quartile_words_count import *
 from .utils.evaluate_model import evaluate_model
 from .utils.show_tf_model_summary import *
 from .utils.translate_texts import make_en_rus_translator
+from .utils.tf_early_stopping import *
