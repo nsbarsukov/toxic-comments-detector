@@ -1,5 +1,5 @@
 # Word Embeddings Layers
-Варианты получения векторных представлений слов (word embeddings).<br>
+Варианты получения векторных представлений слов/предложений (word/sentence embeddings).<br>
 На вход подается tensor из строк и возвращает тензор с числами, которые уже можно дальше
 "скормить" внутрь нейронной сети.
 
@@ -25,3 +25,6 @@ It shows competitive or better results than RusVectores, loads ~10 times faster 
 
 Модель берется с [tensorflow hub](https://tfhub.dev/google/universal-sentence-encoder-multilingual/3).
 > Yinfei Yang, Daniel Cer, Amin Ahmad, Mandy Guo, Jax Law, Noah Constant, Gustavo Hernandez Abrego , Steve Yuan, Chris Tar, Yun-hsuan Sung, Ray Kurzweil. Multilingual Universal Sentence Encoder for Semantic Retrieval. July 2019
+
+## FastText
+Русскоязычный вариант модели берется с [официального сайта модели FastText](https://fasttext.cc/docs/en/crawl-vectors.html).
