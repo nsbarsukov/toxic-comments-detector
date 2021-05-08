@@ -13,4 +13,5 @@ def create_wiki40_russian_embedding_layer():
         output_key='word_embeddings',
         dtype=tf.string,
         trainable=False, # impossible to finetuned (because it is tf1 model)
+        name='wiki40b'
     )

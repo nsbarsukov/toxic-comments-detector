@@ -13,4 +13,5 @@ def create_universal_sentence_encoder_layer():
         input_shape=[],
         dtype=tf.string,
         trainable=True,
+        name='USE'
     )
