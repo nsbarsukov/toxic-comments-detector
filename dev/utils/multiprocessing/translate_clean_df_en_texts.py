@@ -9,7 +9,8 @@ from dev import (
     TRANSLATED_CLEANED_ENGLISH_DF_NAME,
     TRANSLATED_CLEANED_TEXTS_COLUMN,
     ORIGINAL_ENGLISH_TEXTS_COLUMN,
-    ENGLISH_TEXTS_TOXIC_LABEL_COLUMN
+    ENGLISH_TEXTS_TOXIC_LABEL_COLUMN,
+    SEED
 )
 from dev.utils.multiprocessing.translate_en_rus import translate_en_rus
 
@@ -40,7 +41,7 @@ if __name__ == "__main__":
 
     toxic_comments_df = slice_certain_label_df_part(orig_en_toxic_comments_df, 1)
     non_toxic_comments_df = slice_certain_label_df_part(orig_en_toxic_comments_df, 0)
-    sliced_df = pd.concat([toxic_comments_df, non_toxic_comments_df]).sample(frac=1)
+    sliced_df = pd.concat([toxic_comments_df, non_toxic_comments_df]).sample(frac=1, random_state=SEED)
 
     STREAMS_COUNT = multiprocessing.cpu_count() - 1
     print('Запущен скрипт в', STREAMS_COUNT, 'потоков')
