@@ -1,13 +1,17 @@
+import os
 import tensorflow as tf
 from IPython.display import Image, display
 
-from dev import IMAGE_DPI
+from dev import IMAGE_DPI, DIRECTORY_WITH_GRAPHS_IMAGES
 
 
 def show_tf_model_summary(model: tf.keras.models.Model):
     model.summary()
 
-    graph_summary_image_path = f".graphsImages/{model.name}_graph_summary.png"
+    if not os.path.exists(DIRECTORY_WITH_GRAPHS_IMAGES):
+        os.makedirs(DIRECTORY_WITH_GRAPHS_IMAGES)
+
+    graph_summary_image_path = f"{DIRECTORY_WITH_GRAPHS_IMAGES}/{model.name}_graph_summary.png"
     tf.keras.utils.plot_model(
         model,
         to_file=graph_summary_image_path,
