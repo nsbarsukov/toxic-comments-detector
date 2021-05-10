@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'toxic-comments-detector',
-  packages = ['toxic-comments-detector'],
+  name = 'toxicity',
+  packages = ['toxicity'],
   version = '0.2',
   license='MIT',
   description = 'Deep learning classifier of russian toxic comments',

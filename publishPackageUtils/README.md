@@ -1,12 +1,12 @@
 
 ## Install package
 ```shell
-pip install toxic-comments-detector
+pip install toxicity
 ```
 
 ## Example
 ```python
-from toxic-comments-detector import ToxicCommentsDetector
+from toxicity import ToxicCommentsDetector
 
 test_raw_texts = [
     'ты чего берега попутал?',

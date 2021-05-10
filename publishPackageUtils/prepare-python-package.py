@@ -2,7 +2,7 @@ import os
 
 PUBLISH_UTILS_FOLDER = 'publishPackageUtils'
 TEMP_PUBLISH_FOLDER = 'tempPublishFolder'
-PACKAGE_NAME = 'toxic-comments-detector'
+PACKAGE_NAME = 'toxicity'
 
 remove_old_package_dir = f'rm -rf ./{TEMP_PUBLISH_FOLDER}'
 create_new_package_dirs = f'mkdir {TEMP_PUBLISH_FOLDER} && mkdir {TEMP_PUBLISH_FOLDER}/{PACKAGE_NAME}'
