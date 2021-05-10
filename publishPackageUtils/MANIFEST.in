@@ -1,0 +1,3 @@
+include */navecWeights.tar
+include */weightedCNN_NavecWordEmbeddings/*
+include */weightedCNN_NavecWordEmbeddings/*/*
