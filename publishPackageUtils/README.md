@@ -14,5 +14,5 @@ test_raw_texts = [
 ]
 
 toxicDetector = ToxicCommentsDetector()
-print(toxicDetector.predict(test_raw_texts))
+print(toxicDetector.predict(test_raw_texts)) # [0.9521822  0.18336123]
 ```
