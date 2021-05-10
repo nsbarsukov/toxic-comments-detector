@@ -34,7 +34,7 @@ pip3 install twine
 ```
 1. Находясь в корне проект исполни
 ```shell
-python prepare-python-package.py
+python publishPackageUtils/prepare-python-package.py
 ```
 2. Увеличь версию пакета в `toxic-comments-detector/setup.py`
 3. First, go to github.com and navigate to your repository.
