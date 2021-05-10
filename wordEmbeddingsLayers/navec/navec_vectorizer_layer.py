@@ -1,4 +1,4 @@
-
+import os
 NAVEC_UNKNOWN_TOKEN = '<unk>'
 
 
@@ -6,7 +6,7 @@ def load_navec_embeddings():
     from navec import Navec
 
     try:
-        return Navec.load('navecWeights.tar')
+        return Navec.load(f'{os.path.dirname(__file__)}/navecWeights.tar')
     except:
         return Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
 
