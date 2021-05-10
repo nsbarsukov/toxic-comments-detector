@@ -28,6 +28,10 @@
 ## Python package release
 Публикация происходит согласно данному [tutorial](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
 
+0. Установи нужные пакеты
+```shell
+pip3 install twine
+```
 1. Находясь в корне проект исполни
 ```shell
 python prepare-python-package.py
@@ -40,4 +44,7 @@ python prepare-python-package.py
    Now you see a new release and under Assets, there is a link to Source Code (tar.gz).
    Right-click on this link and chose Copy Link Address.
    Paste this link-address into the download_url field in the setup.py file.
-4. 
+4. Находясь в корне репозитория
+```shell
+python publishPackageUtils/publish-python-package.py
+```
