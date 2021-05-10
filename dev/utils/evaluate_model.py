@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-from dev import IMAGE_DPI, TITLE_GRAPH_FONT_SIZE, TITLE_GRAPH_FONT_WEIGHT, FONT_FAMILY, DIRECTORY_WITH_GRAPHS_IMAGES
+from ..constants.repo_paths import DIRECTORY_WITH_GRAPHS_IMAGES
+from ..constants.graphs_style_params import IMAGE_DPI, TITLE_GRAPH_FONT_SIZE, TITLE_GRAPH_FONT_WEIGHT, FONT_FAMILY
 
 
 def format_to_percent(decimal_number):

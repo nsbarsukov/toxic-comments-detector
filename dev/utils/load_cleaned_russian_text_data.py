@@ -2,13 +2,13 @@ import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 
-from dev import (
-    SEED,
+from ..constants.default_hyperparameters import SEED
+from ..constants.repo_paths import (
     DIRECTORY_WITH_DATA,
     CLEANED_RUSSIAN_DF_NAME,
     TRANSLATED_CLEANED_ENGLISH_DF_NAME,
-    ENGLISH_TEXTS_TOXIC_LABEL_COLUMN
 )
+from ..constants.aliases import ENGLISH_TEXTS_TOXIC_LABEL_COLUMN
 
 
 def load_cleaned_russian_text_data():
