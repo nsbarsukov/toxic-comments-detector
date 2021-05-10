@@ -1,0 +1,5 @@
+# allow to put inside published package something except .py files
+
+include */navecWeights.tar
+include */weightedCNN_NavecWordEmbeddings/*
+include */weightedCNN_NavecWordEmbeddings/*/*

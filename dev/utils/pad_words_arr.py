@@ -1,4 +1,4 @@
-from dev.constants.aliases import PAD_WORD
+from ..constants.aliases import PAD_WORD
 
 
 def pad_words_arr(words_arr, maxlen=3, pad_word=PAD_WORD):

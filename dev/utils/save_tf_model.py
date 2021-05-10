@@ -1,7 +1,7 @@
 import os
 import tensorflow as tf
 
-from dev import DIRECTORY_WITH_SAVED_MODELS
+from ..constants.repo_paths import DIRECTORY_WITH_SAVED_MODELS
 
 
 def save_tf_model(model: tf.keras.models.Model):

@@ -2,7 +2,8 @@ import os
 import tensorflow as tf
 from IPython.display import Image, display
 
-from dev import IMAGE_DPI, DIRECTORY_WITH_GRAPHS_IMAGES
+from ..constants.graphs_style_params import IMAGE_DPI
+from ..constants.repo_paths import DIRECTORY_WITH_GRAPHS_IMAGES
 
 
 def show_tf_model_summary(model: tf.keras.models.Model):

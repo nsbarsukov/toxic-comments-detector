@@ -1,18 +1,14 @@
-import tensorflow as tf
-from tensorflow.keras import layers
-from typing import List
-
-from dev import PAD_WORD
-from wordEmbeddingsLayers import CustomVectorizerLayer
-
-
+import os
 NAVEC_UNKNOWN_TOKEN = '<unk>'
 
 
 def load_navec_embeddings():
     from navec import Navec
 
-    return Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
+    try:
+        return Navec.load(f'{os.path.dirname(__file__)}/navecWeights.tar')
+    except:
+        return Navec.load('wordEmbeddingsLayers/navec/navecWeights.tar')
 
 
 def get_navec_word_vectorizer():
@@ -28,15 +24,15 @@ def get_navec_word_vectorizer():
     return navec_word_vectorizer, NAVEC_EMBEDDING_DIMENSION
 
 
-class NavecVectorizerLayer(layers.Layer):
-    def __init__(self, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
-        super(NavecVectorizerLayer, self).__init__()
-
-        self.vectorizer = CustomVectorizerLayer(
-            vectorizer=get_navec_word_vectorizer(),
-            pad_sentence_to_n_words=pad_sentence_to_n_words,
-            pad_word=pad_word
-        )
-
-    def call(self, texts_arr: List[str]) -> tf.Tensor:
-        return self.vectorizer(texts_arr)
+# class NavecVectorizerLayer(layers.Layer):
+#     def __init__(self, pad_word=PAD_WORD, pad_sentence_to_n_words=30):
+#         super(NavecVectorizerLayer, self).__init__()
+#
+#         self.vectorizer = CustomVectorizerLayer(
+#             vectorizer=get_navec_word_vectorizer(),
+#             pad_sentence_to_n_words=pad_sentence_to_n_words,
+#             pad_word=pad_word
+#         )
+#
+#     def call(self, texts_arr: List[str]) -> tf.Tensor:
+#         return self.vectorizer(texts_arr)

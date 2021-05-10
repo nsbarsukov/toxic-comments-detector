@@ -1,6 +1,7 @@
 import numpy as np
 
-from dev import pad_words_arr, PAD_WORD
+from ..utils.pad_words_arr import pad_words_arr
+from ..constants.aliases import PAD_WORD
 
 
 def vectorize_sentence(sentence: str, vectorizer, pad_word=PAD_WORD, pad_sentence_to_n_words=30) -> np.array:
