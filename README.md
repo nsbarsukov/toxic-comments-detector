@@ -28,7 +28,7 @@
 ## Python package release
 Публикация происходит согласно данному [tutorial](https://realpython.com/pypi-publish-python-package/)
 
-0. Установи нужные пакеты
+(0.) Установи нужные пакеты
 ```shell
 pip3 install twine
 ```
