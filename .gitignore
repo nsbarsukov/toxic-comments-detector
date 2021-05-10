@@ -11,3 +11,5 @@ wordEmbeddingsLayers/*/*.tar.gz
 .savedModels/
 
 *argosmodel*
+
+toxic-comments-detector
