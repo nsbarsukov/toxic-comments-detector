@@ -1,10 +1,15 @@
-from distutils.core import setup
+from setuptools import setup, find_packages
+
+with open('README.md', 'r') as readme:
+  long_description = readme.read()
+
 setup(
   name = 'toxicity',
-  packages = ['toxicity'],
-  version = '0.2',
+  version = '0.25',
+  packages = find_packages(),
   license='MIT',
   description = 'Deep learning classifier of russian toxic comments',
+  # long_description = long_description,
   author = 'Barsukov Nikita',
   author_email = 'nikita.s.barsukov@gmail.com',
   url = 'https://github.com/nsbarsukov/toxic-comments-detector',
@@ -22,4 +27,5 @@ setup(
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python :: 3',
   ],
+  include_package_data=True,
 )

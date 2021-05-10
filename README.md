@@ -26,7 +26,7 @@
 
 
 ## Python package release
-Публикация происходит согласно данному [tutorial](https://medium.com/@joel.barmettler/how-to-upload-your-python-package-to-pypi-65edc5fe9c56)
+Публикация происходит согласно данному [tutorial](https://realpython.com/pypi-publish-python-package/)
 
 0. Установи нужные пакеты
 ```shell
